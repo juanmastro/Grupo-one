@@ -3,17 +3,10 @@ from datetime import datetime
 from django.template import Template, Context
 
 def saludo (request):
-    return HttpResponse ("Hola Django - Coder")
+    return HttpResponse ("Bienvenido a la WEB Pelis-Pro-Play")
 
-def segundaVista (request):
-    return HttpResponse ("Hola loke/ ya soy un programador brillante")
-
-def dia (request):
-    variable = datetime.now () 
-    return HttpResponse (f"Hoy es un gran dia {variable}")
-
-def probandoTemplate (seft):
-    mihtml = open ()
+def templateUno (seft):
+    mihtml = open ("C:\\Users\\u900768\\Desktop\\Proyecto\\Grupo-one\\ProyectoFinal\\ProyectoFinal\\plantillas\\template1.html")
     pantilla = Template (mihtml.read())
     
     mihtml.close()
