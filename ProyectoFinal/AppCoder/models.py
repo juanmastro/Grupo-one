@@ -2,23 +2,15 @@ from django.db import models
 
 # Create your models here.
 
-
-class persona (models.Model):
+class usuario (models.Model):
     nombre =  models.CharField (max_length=40)
-    apellido =  models.CharField (max_length=40)
-    edad = models.IntegerField ()
-    direccion =  models.CharField (max_length=40, null=True)
-    
+    fechaNacimiento = models.DateField()
+
 class pelicula (models.Model):
     nombre =  models.CharField (max_length=40)
+    año = models.IntegerField (max_length=4)
+    director = models.CharField (max_length=40)
     genero = models.CharField (max_length=40)
-    duracion= models.IntegerField()
 
-class series (models.Model):
-    nombre =  models.CharField (max_length=40)
-    genero = models.CharField (max_length=40)
-    canTemportadas = models.IntegerField()
-
-
-
-    
+class usuarioNewsletter (models.Model):
+    email = models.EmailField()
