@@ -10,3 +10,4 @@ class persona (models.Model):
 class pelicula (models.Model):
     nombre =  models.CharField (max_length=40)
     genero = models.CharField (max_length=40)
+    duracion= models.IntegerField()
