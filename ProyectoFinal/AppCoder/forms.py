@@ -6,3 +6,4 @@ class UsuarioForm (forms.Form):
     edad = forms.IntegerField ()
     direccion =  forms.CharField ()
     fechaNacimiento = forms.IntegerField()
+

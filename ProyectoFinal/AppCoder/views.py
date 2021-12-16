@@ -31,12 +31,11 @@ def contacto(request):
 
 def userFormulario(request):
 
-    if request.method == "post":
+    if request.method == "POST":
 
-        miFormulario = UsuarioForm (request.post)
+        miFormulario = UsuarioForm (request.POST)
         if miFormulario.is_valid(): 
-            informacion = miFormulario.cleaned_data
-            userInsta = usuario (request.post['nombre'], request.post['edad'],request.post['direccion'],request.post['fechaNacimiento'] )  
+            userInsta = usuario (request.POST["nombre"], request.POST["edad"],request.POST["direccion"],request.POST["fechaNacimiento"] )  
             userInsta.save() #Guarda en la base de datos
 
         return render(request, "AppCoder/inicio.html")
