@@ -1,3 +1,5 @@
-Ultima Actualizacion - 
-
-Activo python - verifico runserver OK
+Se genera repositorio .git
+Se crea Appcoder
+Se generan 3 modelos (Usuario, pelicula y serie) desde Administracion se ven OK - 
+Se cargan templates
+Se genera un form para la clase usuario 
