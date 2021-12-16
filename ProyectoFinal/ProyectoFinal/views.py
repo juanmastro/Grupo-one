@@ -3,15 +3,15 @@ from datetime import datetime
 from django.template import Template, Context
 from django.template import loader
 
-def saludo (request):
-    return HttpResponse ("Bienvenido a la WEB Pelis-Pro-Play")
+#def saludo (request):
+    #return HttpResponse ("Bienvenido a la WEB Pelis-Pro-Play")
 
-def templateUno (seft):
+#def templateUno (seft):
 
-    fecha = datetime.now ()
-    diccionario = {"fechaActualizada": fecha}
+    #fecha = datetime.now ()
+    #diccionario = {"fechaActualizada": fecha}
 
-    plantilla = loader.get_template("template1.html")
+    #plantilla = loader.get_template("template1.html")
 
     #mihtml = open ("C:\\Users\\u900768\\Desktop\\Proyecto\\Grupo-one\\ProyectoFinal\\ProyectoFinal\\plantillas\\template1.html")
     #pantilla = Template (mihtml.read())
@@ -19,6 +19,6 @@ def templateUno (seft):
     #miContexto = Context (diccionario)
     #documento = pantilla.render (miContexto)
 
-    documento = plantilla.render(diccionario)
+    #documento = plantilla.render(diccionario)
 
-    return HttpResponse (documento)
+    #return HttpResponse (documento)

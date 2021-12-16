@@ -4,10 +4,10 @@ from django.db import models
 # Create your models here.
 
 class usuario (models.Model):
-    nombre =  models.CharField (max_length=40)
-    edad = models.IntegerField (null=True)
-    direccion =  models.CharField (max_length=40,)
-    fechaNacimiento = models.IntegerField(null=True)
+    nombre =  models.CharField (max_length=40 )
+    edad = models.IntegerField ()
+    direccion =  models.CharField (max_length=40)
+    fechaNacimiento = models.IntegerField()
 
 class pelicula (models.Model):
     nombre =  models.CharField (max_length=40)
