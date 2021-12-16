@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from django.http import HttpResponse    
+from datetime import datetime
+from django.template import Template, Context
+from django.template import loader
 
 # Create your views here.
 
@@ -31,15 +35,14 @@ def contacto(request):
 
 def userFormulario(request):
 
-    if request.method == "post":
+    if request.method == "POST":
 
-        miFormulario = UsuarioForm (request.post)
+        miFormulario = UsuarioForm (request.POST)
         if miFormulario.is_valid(): 
-            informacion = miFormulario.cleaned_data
-            userInsta = usuario (request.post['nombre'], request.post['edad'],request.post['direccion'],request.post['fechaNacimiento'] )  
+            userInsta = usuario (nombre=request.POST["nombre"], edad=request.POST["edad"],direccion = request.POST["direccion"],fechaNacimiento = request.POST["fechaNacimiento"] )  
             userInsta.save() #Guarda en la base de datos
 
-        return render(request, "AppCoder/inicio.html")
+        return render(request, "AppCoder/registrook.html")
     
     else:
         miFormulario = UsuarioForm()

@@ -2,7 +2,8 @@ from django import forms
 
 class UsuarioForm (forms.Form):
 
-    nombre =  forms.CharField (required=True)
+    nombre =  forms.CharField (max_length=40)
     edad = forms.IntegerField ()
-    direccion =  forms.CharField ()
+    direccion =  forms.CharField (max_length=40)
     fechaNacimiento = forms.IntegerField()
+
