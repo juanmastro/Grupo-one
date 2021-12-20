@@ -10,5 +10,7 @@ urlpatterns = [
     path("userFormulario/", views.userFormulario, name="userFormulario"),
     path("proponerpeli/", views.proponerPeli, name="ProponerPeli"),
     path("newsletter/", views.Newsletter, name="Newsletter"),
+    path("peliFormulario/", views.peliFormulario, name="peliFormulario"),
+
 
 ]

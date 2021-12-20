@@ -57,9 +57,9 @@ def Newsletter(request):
 
     if request.method == "POST":
 
-        formularioNewsletter = FormNewsletter(request.POST )
+        formularioNewsletter = FormNewsletter(request.POST)
 
-        if formularioNewsletter.is_valid:
+        if formularioNewsletter.is_valid():
 
             newsletterInsta = newsletter(email=request.POST["e-mail"])
 
@@ -74,3 +74,33 @@ def Newsletter(request):
     return render(request, "AppCoder/newsletter.html", {"formularioNewsletter":formularioNewsletter})
 
 
+def peliFormulario(request):
+
+    if request.method == 'POST':
+
+        formularioPelicula = PeliculaForm(request.POST)
+
+        if formularioPelicula.is_valid():
+
+            informacion = formularioPelicula.cleaned_data
+
+            peli = PeliculaForm(
+
+                nombre = informacion["nombre"],
+                año = informacion["año"],
+                director = informacion["director"],
+                genero = informacion["genero"],
+                duracion = informacion["duracion"],
+            )
+
+
+            peli.save()
+
+        return render(request, 'AppCoder/inicio.html')
+    
+    else:
+
+        formularioPelicula = PeliculaForm()
+
+
+    return render(request, 'AppCoder/peliFormulario.html', {"formularioPelicula":formularioPelicula})
