@@ -21,7 +21,7 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="index.html">Gremlin Corner</a>
+                    <a class="navbar-brand" href="index.html">Gremlin's Corner</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -39,7 +39,7 @@
                         <div class="col-lg-8 col-xl-7 col-xxl-6">
                             <div class="my-5 text-center text-xl-start">
                                 <h1 class="display-5 fw-bolder text-white mb-2">Gremlin Corner</h1>
-                                <p class="lead fw-normal text-white-50 mb-4">Esto es un blog de Peliculas y Series</p>
+                                <p class="lead fw-normal text-white-50 mb-4">Esto es un blog de peliculas.</p>
                                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Iniciá sesión</a>
                                     <a class="btn btn-outline-light btn-lg px-4" href="{% url 'userFormulario' %}">Registrate</a>
@@ -145,7 +145,8 @@
                             <div class="ms-xl-4">
                                 <div class="input-group mb-2">
                                     <input class="form-control" type="text" placeholder="Correo electrónico" aria-label="Correo electrónico" aria-describedby="button-newsletter" />
-                                    <button class="btn btn-outline-light" id="button-newsletter" type="button">Suscribite</button>
+                                    <a href="{% url 'Newsletter' %}">
+                                        <button class="btn btn-outline-light" id="button-newsletter" type="button"  >Suscribite</button>
                                 </div>
                                 <div class="small text-white-50">Nos importa tu privacidad, jamás compartiremos tu información personal.</div>
                             </div>

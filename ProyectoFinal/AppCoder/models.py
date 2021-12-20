@@ -1,13 +1,16 @@
 from django.db import models
+from django import forms
 
 
 # Create your models here.
 
 class usuario (models.Model):
-    nombre =  models.CharField (max_length=40 )
-    edad = models.IntegerField ()
-    direccion =  models.CharField (max_length=40)
+    nombre =  models.CharField (max_length=40)
+    apellido = models.CharField(null=True,max_length=40)
     fechaNacimiento = models.DateField()
+    email = models.EmailField(default='email')
+    contrasena = models.CharField(max_length=40)
+    
 
     def __str__(self):
         return f"nombre:{self.nombre}"
@@ -23,8 +26,9 @@ class pelicula (models.Model):
         return f"{self.nombre}({self.año})"
 
 
-class usuarioNewsletter (models.Model):
-    email = models.EmailField(null=True)
+class mensajeContacto(models.Model):
+    email = models.EmailField()
+    mensaje = models.CharField(max_length=360)
 
-    def __str__(self):
-        return f"{self.email}"
+class newsletter(models.Model):
+    email = models.EmailField()

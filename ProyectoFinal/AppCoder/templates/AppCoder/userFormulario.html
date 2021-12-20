@@ -5,8 +5,15 @@
 
 
         {% block contenido %}
-        <h1 class="mb1">Formulario de Usuario</h1>
-        <p>Ingrese sus Datos o largo de aqui.</p>
+
+        <br>
+        <br>
+        <br>
+
+        <div class="text-center">
+
+        <h2 class="fw-bolder">Registrate</h2>
+        <p class="lead fw-normal text-muted mb-5">Registrate para acceder a nuevas posibilidades.</p>
 
         <form action="/AppCoder/userFormulario/" method="POST">{% csrf_token %}
             <!--
@@ -32,7 +39,7 @@
 
         </form>
 
-
+        </div>
 
         {% endblock %}
 
