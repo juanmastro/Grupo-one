@@ -8,7 +8,7 @@ from django.template import loader
 
 from django.shortcuts import render
 from django.http import HttpResponse
-from AppCoder.models import usuario, pelicula, serie
+from AppCoder.models import usuario, pelicula
 from AppCoder.forms import UsuarioForm
 
 
