@@ -73,7 +73,6 @@ def Newsletter(request):
 
     return render(request, "AppCoder/newsletter.html", {"formularioNewsletter":formularioNewsletter})
 
-
 def peliFormulario(request):
 
     if request.method == 'POST':
