@@ -8,15 +8,15 @@ from django.template import loader
 
 from django.shortcuts import render
 from django.http import HttpResponse
-from AppCoder.models import usuario, pelicula, serie
-from AppCoder.forms import UsuarioForm
+from AppCoder.models import *
+from AppCoder.forms import *
+from AppCoder.models import *
+
+
 
 
 
 # Create your views here.
-
-def madre(request):
-    return render(request,"AppCoder/madre.html")
 
 def inicio(request):
     return render(request, "AppCoder/inicio.html")
@@ -50,4 +50,56 @@ def userFormulario(request):
 
     return render(request, 'AppCoder/userFormulario.html', {"miFormulario":miFormulario})
 
+def proponerPeli(request):
+    return render(request, "AppCoder/proponerPeli.html")
+
+def Newsletter(request):
+
+    if request.method == "POST":
+
+        formularioNewsletter = FormNewsletter(request.POST)
+
+        if formularioNewsletter.is_valid():
+
+            newsletterInsta = newsletter(email=request.POST["e-mail"])
+
+            newsletterInsta.save()
+
+            return render(request, "AppCoder/inicio.html")
+
+    else:
+
+        formularioNewsletter = newsletter()
+
+    return render(request, "AppCoder/newsletter.html", {"formularioNewsletter":formularioNewsletter})
+
+def peliFormulario(request):
+
+    if request.method == 'POST':
+
+        formularioPelicula = PeliculaForm(request.POST)
+
+        if formularioPelicula.is_valid():
+
+            informacion = formularioPelicula.cleaned_data
+
+            peli = PeliculaForm(
+
+                nombre = informacion["nombre"],
+                año = informacion["año"],
+                director = informacion["director"],
+                genero = informacion["genero"],
+                duracion = informacion["duracion"],
+            )
+
+
+            peli.save()
+
+        return render(request, 'AppCoder/inicio.html')
     
+    else:
+
+        formularioPelicula = PeliculaForm()
+
+
+    return render(request, 'AppCoder/peliFormulario.html', {"formularioPelicula":formularioPelicula})
