@@ -27,3 +27,6 @@ class pelicula (models.Model):
 
 class newsletter(models.Model):
     email = models.EmailField()
+
+    def __str__(self):
+      return f"{self.email}"
