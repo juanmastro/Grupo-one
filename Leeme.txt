@@ -1,0 +1,16 @@
+Para entrar como admin:
+user: laura
+pass: asdasd123
+
+En la web:
+Probando forumulario de registro:
+Cliquear "Registrate".
+Insertar datos en el form, en fecha de nacimiento poner AAAA-MM-DD (año, mes y día entre guiones), para su correcto funcionamiento
+
+Probar formulario de película:
+En inicio, entrar al link debajo de "Nos interesan tus recomendaciones", rellenar el formulario
+(sí, tenés que recomendar una película), en duración poner HH:MM (horas y minutos entre dos puntos).
+
+Probar formulario newsletter:
+Abajo de todo, cliquear el botón azul "Suscribite".
+Rellenar formulario.
