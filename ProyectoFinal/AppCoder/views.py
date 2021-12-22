@@ -39,7 +39,7 @@ def userFormulario(request):
 
         miFormulario = UsuarioForm (request.POST)
         if miFormulario.is_valid(): 
-            userInsta = usuario (nombre=request.POST["nombre"], apellido=request.POST["apellido"],fechaNacimiento = request.POST["fecha Nacimiento"], contrasena=request.POST["contrasena"]  )  
+            userInsta = usuario (nombre=request.POST["nombre"], apellido=request.POST["apellido"],fechaNacimiento = request.POST["fechaNacimiento"], contrasena=request.POST["contrasena"]  )  
             userInsta.save() #Guarda en la base de datos
 
         return render(request, "AppCoder/registrook.html")
