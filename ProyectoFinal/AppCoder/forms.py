@@ -5,7 +5,6 @@ class UsuarioForm (forms.Form):
     nombre =  forms.CharField (max_length=40)
     apellido = forms.CharField(max_length=40)
     fechaNacimiento = forms.DateField()
-    email = forms.EmailField()
     contrasena = forms.CharField(widget=forms.PasswordInput,max_length=40)
 
 
