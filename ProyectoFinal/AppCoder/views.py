@@ -80,20 +80,8 @@ def peliFormulario(request):
         formularioPelicula = PeliculaForm(request.POST)
 
         if formularioPelicula.is_valid():
-
-            informacion = formularioPelicula.cleaned_data
-
-            peli = PeliculaForm(
-
-                nombre = informacion["nombre"],
-                año = informacion["año"],
-                director = informacion["director"],
-                genero = informacion["genero"],
-                duracion = informacion["duracion"],
-            )
-
-
-            peli.save()
+            userPeli = pelicula (nombre=request.POST["nombre"], año=request.POST["año"],director = request.POST["director"], genero=request.POST["genero"], duracion=request.POST["duracion"]  )  
+            userPeli.save()
 
         return render(request, 'AppCoder/inicio.html')
     
