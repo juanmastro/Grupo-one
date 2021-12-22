@@ -39,7 +39,7 @@ def userFormulario(request):
 
         miFormulario = UsuarioForm (request.POST)
         if miFormulario.is_valid(): 
-            userInsta = usuario (nombre=request.POST["nombre"], apellido=request.POST["apellido"],fechaNacimiento = request.POST["fechaNacimiento"], contrasena=request.POST["contrasena"]  )  
+            userInsta = usuario (nombre=request.POST["nombre"], apellido=request.POST["apellido"],fechaNacimiento = request.POST["fecha Nacimiento"], contrasena=request.POST["contrasena"]  )  
             userInsta.save() #Guarda en la base de datos
 
         return render(request, "AppCoder/registrook.html")
@@ -80,20 +80,8 @@ def peliFormulario(request):
         formularioPelicula = PeliculaForm(request.POST)
 
         if formularioPelicula.is_valid():
-
-            informacion = formularioPelicula.cleaned_data
-
-            peli = PeliculaForm(
-
-                nombre = informacion["nombre"],
-                año = informacion["año"],
-                director = informacion["director"],
-                genero = informacion["genero"],
-                duracion = informacion["duracion"],
-            )
-
-
-            peli.save()
+            userPeli = pelicula (nombre=request.POST["nombre"], año=request.POST["año"],director = request.POST["director"], genero=request.POST["genero"], duracion=request.POST["duracion"]  )  
+            userPeli.save()
 
         return render(request, 'AppCoder/inicio.html')
     
