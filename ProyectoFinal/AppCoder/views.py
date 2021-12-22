@@ -69,7 +69,7 @@ def Newsletter(request):
 
     else:
 
-        formularioNewsletter = newsletter()
+        formularioNewsletter = FormNewsletter()
 
     return render(request, "AppCoder/newsletter.html", {"formularioNewsletter":formularioNewsletter})
 
