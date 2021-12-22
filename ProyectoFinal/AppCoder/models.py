@@ -20,15 +20,10 @@ class pelicula (models.Model):
     año = models.IntegerField (null=True)
     director = models.CharField (max_length=40,null=True )
     genero = models.CharField (max_length=40)
-    duracion = models.IntegerField (null=True)
+    duracion = models.TimeField (null=True)
 
     def __str__(self):
         return f"{self.nombre}({self.año})"
-
-
-class mensajeContacto(models.Model):
-    email = models.EmailField()
-    mensaje = models.CharField(max_length=360)
 
 class newsletter(models.Model):
     email = models.EmailField()

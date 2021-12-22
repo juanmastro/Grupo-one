@@ -61,11 +61,11 @@ def Newsletter(request):
 
         if formularioNewsletter.is_valid():
 
-            newsletterInsta = newsletter(email=request.POST["e-mail"])
+            newsletterInsta = newsletter(email=request.POST["email"])
 
             newsletterInsta.save()
 
-            return render(request, "AppCoder/inicio.html")
+        return render(request, "AppCoder/inicio.html")
 
     else:
 
