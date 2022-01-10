@@ -4,6 +4,6 @@ from django.contrib import admin
 
 from .models import *
 
-admin.site.register(usuario)
-admin.site.register(pelicula)
-admin.site.register(serie)
+admin.site.register(Usuario)
+admin.site.register(Pelicula)
+admin.site.register(Newsletter)

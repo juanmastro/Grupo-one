@@ -1,0 +1,31 @@
+{% extends "AppCoder/madre.html" %}
+
+{% load static %}
+
+
+{% block contenido %}
+
+<br>
+<br>
+
+<div class="text-center">
+    
+
+    <form action="/AppCoder/peliFormulario/" method="POST">{% csrf_token %}
+
+        <table>
+
+            {{  formularioPelicula.as_table   }}
+
+        </table>
+
+        <input type="submit" value="Enviar">
+
+
+    </form>
+
+</div>
+
+
+
+{% endblock %}

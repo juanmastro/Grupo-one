@@ -1,0 +1,38 @@
+{% extends "AppCoder/madre.html" %}
+
+
+
+{% load static %}
+
+        {% block contenido2 %}
+            <h1 class="mb-1">Busca tu peli favorita</h1>
+        {% endblock %}
+
+
+        {% block contenido %}
+
+
+            <h1>Estamos buscando....</h1>
+
+            {% if peliculas %}
+
+                <ul>
+                {% for pelicula in peliculas %}
+
+                <li>NOMBRE: {{pelicula.nombre}}</li>
+                <li>AÑO: {{pelicula.año}}</li>   
+                <li>DIRECTOR: {{pelicula.director}}</li>
+                <li>GENERO: {{pelicula.genero}}</li>
+                <li>DURACION: {{pelicula.duracion}}</li>
+   
+
+
+                {% endfor %}
+                </ul>
+
+            {% endif %}
+         
+
+         
+
+        {% endblock %}

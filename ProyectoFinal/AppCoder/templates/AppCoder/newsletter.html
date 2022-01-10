@@ -1,0 +1,32 @@
+{% extends "AppCoder/madre.html" %}
+
+{% load static %}
+
+
+{% block contenido %}
+
+<br>
+<br>
+
+<div class="text-center">
+    <h2 class="fw-bolder">Sucribite a nuestro Newsletter!</h2>
+    <p class="lead fw-normal text-muted mb-5">No te pierdas ningún post de nuestro blog.</p>
+
+    <form action="/AppCoder/newsletter/" method="POST">{% csrf_token %}
+
+        <table>
+
+            {{formularioNewsletter.as_table}}
+
+        </table>
+        <input type="submit" value="Unite!">
+
+
+    </form>
+
+    
+</div>
+
+
+
+{% endblock %}

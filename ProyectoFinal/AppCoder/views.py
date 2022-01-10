@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse    
+from django.http import HttpResponse, response    
 from datetime import datetime
 from django.template import Template, Context
 from django.template import loader
@@ -8,15 +8,16 @@ from django.template import loader
 
 from django.shortcuts import render
 from django.http import HttpResponse
-from AppCoder.models import usuario, pelicula, serie
-from AppCoder.forms import UsuarioForm
+from AppCoder.models import *
+from AppCoder.forms import *
+from AppCoder.models import *
+
+
+
 
 
 
 # Create your views here.
-
-def madre(request):
-    return render(request,"AppCoder/madre.html")
 
 def inicio(request):
     return render(request, "AppCoder/inicio.html")
@@ -39,7 +40,7 @@ def userFormulario(request):
 
         miFormulario = UsuarioForm (request.POST)
         if miFormulario.is_valid(): 
-            userInsta = usuario (nombre=request.POST["nombre"], edad=request.POST["edad"],direccion = request.POST["direccion"],fechaNacimiento = request.POST["fechaNacimiento"] )  
+            userInsta = Usuario (nombre=request.POST["nombre"], apellido=request.POST["apellido"],fechaNacimiento = request.POST["fechaNacimiento"],correo=request.POST["correo"], contrasena=request.POST["contrasena"]  )  
             userInsta.save() #Guarda en la base de datos
 
         return render(request, "AppCoder/registrook.html")
@@ -50,4 +51,80 @@ def userFormulario(request):
 
     return render(request, 'AppCoder/userFormulario.html', {"miFormulario":miFormulario})
 
+def proponerPeli(request):
+    return render(request, "AppCoder/proponerPeli.html")
+
+def Newsletter(request):
+
+    if request.method == "POST":
+
+        formularioNewsletter = FormNewsletter(request.POST)
+
+        if formularioNewsletter.is_valid():
+
+            newsletterInsta = Newsletter(email=request.POST["email"])
+
+            newsletterInsta.save()
+
+        return render(request, "AppCoder/inicio.html")
+
+    else:
+
+        formularioNewsletter = FormNewsletter()
+
+    return render(request, "AppCoder/newsletter.html", {"formularioNewsletter":formularioNewsletter})
+
+def peliFormulario(request):
+
+    if request.method == 'POST':
+
+        formularioPelicula = PeliculaForm(request.POST)
+
+        if formularioPelicula.is_valid():
+            userPeli = Pelicula (nombre=request.POST["nombre"], año=request.POST["año"],director = request.POST["director"], genero=request.POST["genero"], duracion=request.POST["duracion"]  )  
+            userPeli.save()
+
+        return render(request, 'AppCoder/inicio.html')
     
+    else:
+
+        formularioPelicula = PeliculaForm()
+
+
+    return render(request, 'AppCoder/peliFormulario.html', {"formularioPelicula":formularioPelicula})
+
+
+
+
+def busquedapeli (request):
+    return render(request, "AppCoder/busquedapeli.html")
+
+
+def buscar (request):
+
+    if request.GET ["nombre"]:
+        
+        nombre = request.GET ["nombre"]
+        peliculas = Pelicula.objects.filter(nombre__icontains=nombre)
+
+        return render (request, "AppCoder/resultadobusqueda.html", {"peliculas":peliculas, "nombre":nombre})
+
+    else:
+        respuesta = "No tengo informacion cargada"
+    
+    return HttpResponse (respuesta)
+    
+def resultadobusqueda (request):
+    return render(request, "AppCoder/resultadobusqueda.html")
+
+
+def leerpeliculas (request):
+
+    peliculas = Pelicula.objects.all()
+    dir = {"peliculas":peliculas}
+    return render (request, "AppCoder/leerpeliculas.html", dir)
+
+
+ 
+
+
