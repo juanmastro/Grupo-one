@@ -1,0 +1,35 @@
+{% extends "AppCoder/madre.html" %}
+
+{% load static %}
+
+
+{% block contenido %}
+
+
+
+<div class="text-center">
+    
+    <h2>Los datos de la peli son </h2>
+
+
+
+        {% if equipos %}
+
+                <ul>
+                {% for pelicula in peliculas %}
+
+                <li>NOMBRE: {{pelicula.nombre}}</li>
+                <li>AÑO:{{pelicula.año}}</li>
+                <li>DIRECTOR: {{pelicula.director}}</li>
+                <li>GENERO: {{pelicula.genero}}</li>
+                <li>DURACION: {{pelicula.duracion}}</li>
+
+
+                {% endfor %}
+                </ul>
+
+        {% endif %}
+
+</div>
+
+{% endblock %}
