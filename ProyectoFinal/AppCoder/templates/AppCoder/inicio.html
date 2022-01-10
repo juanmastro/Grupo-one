@@ -2,6 +2,13 @@
 
 {% load static %}
 
+{% block contenido2 %}
+<h1 class="mb-1">INICIO!!!!!!!!!!!!!!!!!!!!</h1>
+{% if  request.user.is_authenticated %}
+<img src="{{ avatar }}" alt="">
+{% endif %}
+
+{% endblock %}
 
 {% block contenido %}
 
