@@ -104,15 +104,10 @@ def buscar (request):
 
     if request.GET ["nombre"]:
         
-
         nombre = request.GET ["nombre"]
         peliculas = Pelicula.objects.filter(nombre__icontains=nombre)
 
         return render (request, "AppCoder/resultadobusqueda.html", {"peliculas":peliculas, "nombre":nombre})
-
-  
-
-
 
     else:
         respuesta = "No tengo informacion cargada"

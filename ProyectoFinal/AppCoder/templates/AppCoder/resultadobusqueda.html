@@ -1,35 +1,34 @@
 {% extends "AppCoder/madre.html" %}
 
+
+
 {% load static %}
 
-
-{% block contenido %}
-
-
-
-<div class="text-center">
-    
-    <h2>Los datos de la peli son </h2>
+        {% block contenido2 %}
+            <h1 class="mb-1">Busca tu peli favorita</h1>
+        {% endblock %}
 
 
+        {% block contenido %}
 
-        {% if equipos %}
+
+            <h1>Estamos buscando....</h1>
+
+            {% if peliculas %}
 
                 <ul>
                 {% for pelicula in peliculas %}
 
                 <li>NOMBRE: {{pelicula.nombre}}</li>
-                <li>AÑO:{{pelicula.año}}</li>
-                <li>DIRECTOR: {{pelicula.director}}</li>
-                <li>GENERO: {{pelicula.genero}}</li>
-                <li>DURACION: {{pelicula.duracion}}</li>
+                <li>NOMBRE: {{pelicula.año}}</li>        
 
 
                 {% endfor %}
                 </ul>
 
-        {% endif %}
+            {% endif %}
+         
 
-</div>
+         
 
-{% endblock %}
+        {% endblock %}
