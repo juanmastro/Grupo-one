@@ -31,10 +31,7 @@
                           
                             {% if not request.user.is_authenticated %}
                             <li class="nav-item"><a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'Login' %}">Iniciá sesión</a></li>
-                            <li class="nav-item"><a class="btn btn-outline-light btn-lg px-4" href="{% url 'userFormulario' %}">Registrate</a></li>
-                        
                             {% endif %}
-            
             
                             {% if  request.user.is_authenticated %}
                             <li class="sidebar-nav-item"><a style="color:red;">Hola, {{user.username}}</a></li>
