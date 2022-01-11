@@ -44,23 +44,12 @@ def userFormulario(request):
     if request.method == "POST":
 
         miFormulario = UsuarioForm (request.POST)
-        if miFormulario.is_valid(): 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            userInsta = usuario (nombre=request.POST["nombre"],
-            apellido=request.POST["apellido"],
-            fechaNacimiento = request.POST["fechaNacimiento"],
-            contrasena=request.POST["contrasena"]  )  
-=======
-            userInsta = Usuario (nombre=request.POST["nombre"], apellido=request.POST["apellido"],fechaNacimiento = request.POST["fechaNacimiento"],correo=request.POST["correo"], contrasena=request.POST["contrasena"]  )  
->>>>>>> a85985ee8350bfbdc2cd9cae31ef3dac8f4ff758
-=======
-            userInsta = Usuario (nombre=request.POST["nombre"], apellido=request.POST["apellido"],fechaNacimiento = request.POST["fechaNacimiento"],correo=request.POST["correo"], contrasena=request.POST["contrasena"]  )  
->>>>>>> ff317e77c4b989de7317767c32f9a0c532be55ba
-            userInsta.save() #Guarda en la base de datos
+
+        userInsta = Usuario (nombre=request.POST["nombre"], apellido=request.POST["apellido"],fechaNacimiento = request.POST["fechaNacimiento"],correo=request.POST["correo"], contrasena=request.POST["contrasena"]  )  
+
+        userInsta.save() #Guarda en la base de datos
 
         return render(request, "AppCoder/registrook.html")
-    
     else:
         miFormulario = UsuarioForm()
 
@@ -110,8 +99,7 @@ def peliFormulario(request):
     return render(request, 'AppCoder/peliFormulario.html', {"formularioPelicula":formularioPelicula})
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 #LOGIN
 def login_request(request):
     
@@ -233,9 +221,6 @@ def agregarAvatar(request):
             miFormulario= AvatarFormulario() #Formulario vacio para construir el html
 
       return render(request, "AppCoder/agregarAvatar.html", {"miFormulario":miFormulario})
-=======
-=======
->>>>>>> ff317e77c4b989de7317767c32f9a0c532be55ba
 
 
 def busquedapeli (request):
@@ -265,12 +250,3 @@ def leerpeliculas (request):
     peliculas = Pelicula.objects.all()
     dir = {"peliculas":peliculas}
     return render (request, "AppCoder/leerpeliculas.html", dir)
-
-
- 
-
-
-<<<<<<< HEAD
->>>>>>> a85985ee8350bfbdc2cd9cae31ef3dac8f4ff758
-=======
->>>>>>> ff317e77c4b989de7317767c32f9a0c532be55ba
