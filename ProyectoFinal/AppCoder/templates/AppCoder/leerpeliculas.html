@@ -1,0 +1,22 @@
+{% extends "AppCoder/madre.html" %}
+
+{% load static %}
+
+
+{% block contenido %}
+
+<br>
+<br>
+
+<div class="text-center">
+    <h2 class="fw-bolder">Listado de peliculas</h2>
+    <p class="lead fw-normal text-muted mb-5">1 2 3 Action.</p>
+</div>
+        {% for pel in peliculas %}
+
+            <li> {{pel}}</li>
+        
+        {% endfor %}
+
+
+{% endblock %}
