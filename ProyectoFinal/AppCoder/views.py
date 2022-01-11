@@ -21,6 +21,7 @@ from django.contrib.auth.decorators import login_required
 
 
 
+
 # Create your views here.
 
 def inicio(request):
@@ -45,6 +46,7 @@ def userFormulario(request):
         miFormulario = UsuarioForm (request.POST)
         if miFormulario.is_valid(): 
 <<<<<<< HEAD
+<<<<<<< HEAD
             userInsta = usuario (nombre=request.POST["nombre"],
             apellido=request.POST["apellido"],
             fechaNacimiento = request.POST["fechaNacimiento"],
@@ -52,6 +54,9 @@ def userFormulario(request):
 =======
             userInsta = Usuario (nombre=request.POST["nombre"], apellido=request.POST["apellido"],fechaNacimiento = request.POST["fechaNacimiento"],correo=request.POST["correo"], contrasena=request.POST["contrasena"]  )  
 >>>>>>> a85985ee8350bfbdc2cd9cae31ef3dac8f4ff758
+=======
+            userInsta = Usuario (nombre=request.POST["nombre"], apellido=request.POST["apellido"],fechaNacimiento = request.POST["fechaNacimiento"],correo=request.POST["correo"], contrasena=request.POST["contrasena"]  )  
+>>>>>>> ff317e77c4b989de7317767c32f9a0c532be55ba
             userInsta.save() #Guarda en la base de datos
 
         return render(request, "AppCoder/registrook.html")
@@ -105,6 +110,7 @@ def peliFormulario(request):
     return render(request, 'AppCoder/peliFormulario.html', {"formularioPelicula":formularioPelicula})
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #LOGIN
 def login_request(request):
@@ -228,6 +234,8 @@ def agregarAvatar(request):
 
       return render(request, "AppCoder/agregarAvatar.html", {"miFormulario":miFormulario})
 =======
+=======
+>>>>>>> ff317e77c4b989de7317767c32f9a0c532be55ba
 
 
 def busquedapeli (request):
@@ -262,4 +270,7 @@ def leerpeliculas (request):
  
 
 
+<<<<<<< HEAD
 >>>>>>> a85985ee8350bfbdc2cd9cae31ef3dac8f4ff758
+=======
+>>>>>>> ff317e77c4b989de7317767c32f9a0c532be55ba
