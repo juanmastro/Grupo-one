@@ -56,8 +56,6 @@ def userFormulario(request):
 
     return render(request, 'AppCoder/userFormulario.html', {"miFormulario":miFormulario})
 
-def proponerPeli(request):
-    return render(request, "AppCoder/proponerPeli.html")
 
 def Newsletter(request):
 
