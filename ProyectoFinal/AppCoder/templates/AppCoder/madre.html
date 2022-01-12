@@ -30,13 +30,12 @@
                             <li class="nav-item"><a class="nav-link" href="{% url 'Contacto' %}">Contacto</a></li>
                           
                             {% if not request.user.is_authenticated %}
-                            <li class="nav-item"><a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'Login' %}">Iniciá sesión</a></li>
-                            <li class="nav-item"></li><a class="btn btn-outline-light btn-lg px-4" href="{% url 'UserFormulario' %}">Registrate</a></li>
+                            <li class="nav-item"><a class="btn btn-primary btn-lg px-4 me-sm-3 " href="{% url 'Login' %}">Iniciá sesión</a></li>
+                            <li class="nav-item"><a class="btn btn-outline-light btn-lg px-4" href="{% url 'UserFormulario' %}">Registrate</a></li>
                             {% endif %}
             
                             {% if  request.user.is_authenticated %}
-                            <li class="sidebar-nav-item"><a style="color:red;">Hola, {{user.username}}</a></li>
-                            <li class="sidebar-nav-item"><a href="{% url 'Logout' %}">LOGOUT</a></li>
+                            <li class="nav-item"><i><a class="nav-link" style="color:rgb(25, 72, 226);" href="{% url 'Logout' %}"><ins>Logout</ins></a></i></li>
                             {% endif %}
                     
                             
@@ -52,9 +51,13 @@
                         <div class="col-lg-8 col-xl-7 col-xxl-6">
                             <div class="my-5 text-center text-xl-start">
                                 <h1 class="display-5 fw-bolder text-white mb-2">Gremlin Corner</h1>
-                                <p class="lead fw-normal text-white-50 mb-4">Esto es un blog de peliculas.</p>
+                                <p class="lead fw-normal text-white-50 mb-4">El mejor Blog de Peliculas</p>
 
                                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+
+                                    {% if  request.user.is_authenticated %}
+                                    <li class="sidebar-nav-item"><b><a style="color:white; font-size: 160%;">Hola!, Bienvenido {{user.username}} !! </a></b></li>
+                                    {% endif %}
 
                                 </div>
                             </div>

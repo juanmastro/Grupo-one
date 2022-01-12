@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN</title>
-</head>
-<body>
 
+{% load static %}
+
+{% block contenido %}
+
+<body style="background-color:#212529;">
+    <div style="text-align: center;">
+        <h1 class="display-5 fw-bolder text-white mb-2" style="color: white;">HOLA VAQUERO</h1>
+   
     <form action="" method="POST">
 
         {% csrf_token %}
@@ -17,8 +16,10 @@
         <input type="submit" value="LOGIN">
 
     </form>
+    <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://c.tenor.com/GnMfIY8_sUoAAAAC/hello-woody.gif" alt="..." /></div>
 
-
-    
+    </div>
+     
 </body>
-</html>
+
+{% endblock %}

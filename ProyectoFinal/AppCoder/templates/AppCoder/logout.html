@@ -1,23 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logout</title>
-</head>
-<body>
 
+{% load static %}
 
-    <p>ADIOS VAQUERO</p>
+{% block contenido %}
 
-    <script type="text/javascript">   
-        function Redirect() 
-        {  
-            window.location="{% url 'Inicio' %}"; 
-        } 
-        setTimeout('Redirect()', 2000);   
-    </script>
-    
+<script type="text/javascript">   
+    function Redirect() 
+    {  
+        window.location="{% url 'Inicio' %}"; 
+    } 
+    setTimeout('Redirect()', 4000);   
+</script>
+<body style="background-color:#212529;">
+    <div style="text-align: center;">
+        <h1 class="display-5 fw-bolder text-white mb-2" style="color: white;">ADIOS VAQUERO</h1>
+        <p class="lead fw-normal text-white-50 mb-4" style="color: white;">Nos Vemos Pronto ! </p>
+        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://i.pinimg.com/originals/ed/fe/05/edfe05a3ee51f0eaa37cece0c0c925f1.gif" alt="..." /></div>
+    </div>
+   
 </body>
-</html>
+
+{% endblock %}
