@@ -9,7 +9,6 @@ urlpatterns = [
     path("post1/", views.post1, name="Post1"),
     path("contacto/", views.contacto, name="Contacto"),
     path("userFormulario/", views.userFormulario, name="UserFormulario"),
-    path("proponerpeli/", views.proponerPeli, name="ProponerPeli"),
     path("newsletter/", views.Newsletter, name="Newsletter"),
 
 
