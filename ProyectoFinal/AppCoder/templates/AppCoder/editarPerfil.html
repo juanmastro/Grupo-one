@@ -1,0 +1,29 @@
+{% load static %}
+
+{% block contenido %}
+
+<body style="background-color:#212529;">
+    <div style="text-align: center;">
+        <h1 class="display-5 fw-bolder text-white mb-2" style="color: white;">EDITAR PERFIL</h1>
+   
+        <form action="" method="POST">  {% csrf_token %}
+
+            <table>
+    
+                {{ miFormulario.as_table }}
+    
+    
+            </table>
+    
+    
+            <input type="submit" value="Editar">
+    
+        </form>
+    
+    <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://c.tenor.com/z2NUtaQJlkQAAAAd/toy-story-hamm.gif" alt="..." /></div>
+
+    </div>
+     
+</body>
+
+{% endblock %}

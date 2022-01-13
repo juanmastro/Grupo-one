@@ -1,0 +1,40 @@
+{% extends "AppCoder/madre.html" %}
+
+
+{% load static %}
+
+        {% block contenido2 %}
+            <h1 class="mb-1">Usuario</h1>
+        {% endblock %}
+
+
+
+
+        {% block contenido %}
+
+
+            {% if miFormulario.errors %}
+
+            <p>ERROR!</p>
+            {% endif %}
+
+
+            <form action="" method="POST">{% csrf_token %}
+                <!--
+                <p>Direccion: <input type="text"  name="direccion">    </p>
+
+                <p>Año: <input type="number"  name="anioFund">    </p>
+
+                -->
+                <table>
+
+                {{  miFormulario.as_table    }}
+
+                </table>
+
+                <input type="submit" value="EDITAAAR!!!!">
+            </form>
+
+         
+
+        {% endblock %}

@@ -1,4 +1,5 @@
 from django import forms
+import datetime
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
@@ -31,6 +32,7 @@ class UserEditForm(UserCreationForm):
     email = forms.EmailField(label="Ingrese su email:")
     password1 = forms.CharField(label='Contraseña')
     password2 = forms.CharField(label='Repetir la contraseña', widget=forms.PasswordInput) 
-   
+    #imagen_avatar = forms.ImageField(required=False)
   
- 
+class AvatarFormulario(forms.Form):
+    imagen = forms.ImageField(required=True)
