@@ -68,9 +68,13 @@ def userFormulario(request):
 
         miFormulario = UsuarioForm (request.POST)
 
-        userInsta = Usuario (nombre=request.POST["nombre"], apellido=request.POST["apellido"],fechaNacimiento = request.POST["fechaNacimiento"],correo=request.POST["correo"], contrasena=request.POST["contrasena"]  )  
+        userInsta = Usuario (nombre=request.POST["nombre"],
+         apellido=request.POST["apellido"],
+         fechaNacimiento = request.POST["fechaNacimiento"],
+         correo=request.POST["correo"],
+         contrasena=request.POST["contrasena"]  )  
 
-        userInsta.save() #Guarda en la base de datos
+        userInsta.save()
 
         return render(request, "AppCoder/registrook.html")
     else:
@@ -153,7 +157,7 @@ def login_request(request):
             
     
     
-    form = AuthenticationForm()  #Formulario sin nada para hacer el login
+    form = AuthenticationForm() 
     
     return render(request, "AppCoder/login.html", {"form":form} )
 
@@ -179,8 +183,6 @@ def register(request):
 
       else:
             #form = UserCreationForm()     
-            
-              
             form = UserRegisterForm()     
 
       return render(request,"AppCoder/register.html" ,  {"form":form})
@@ -224,9 +226,9 @@ def editarPerfil(request):
 def agregarAvatar(request):
       if request.method == 'POST':
 
-            miFormulario = AvatarFormulario(request.POST, request.FILES) #aquí mellega toda la información del html
+            miFormulario = AvatarFormulario(request.POST, request.FILES)
 
-            if miFormulario.is_valid():   #Si pasó la validación de Django
+            if miFormulario.is_valid():
 
 
                   u = User.objects.get(username=request.user)
@@ -235,11 +237,11 @@ def agregarAvatar(request):
       
                   avatar.save()
 
-                  return render(request, "AppCoder/inicio.html") #Vuelvo al inicio o a donde quieran
+                  return render(request, "AppCoder/inicio.html")
 
       else: 
 
-            miFormulario= AvatarFormulario() #Formulario vacio para construir el html
+            miFormulario= AvatarFormulario()
 
       return render(request, "AppCoder/agregarAvatar.html", {"miFormulario":miFormulario})
 
