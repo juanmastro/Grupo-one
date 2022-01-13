@@ -59,6 +59,9 @@ def post3(request):
 def contacto(request):
     return render(request, "AppCoder/contacto.html")
 
+def proponerPeli(request):
+    return render(request, "AppCoder/proponerPeli.html")
+
 def userFormulario(request):
 
     if request.method == "POST":
