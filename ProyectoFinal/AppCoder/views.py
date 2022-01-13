@@ -11,13 +11,15 @@ from django.http import HttpResponse
 from AppCoder.models import *
 from AppCoder.forms import *
 from AppCoder.models import *
+from django.views.generic.edit import CreateView
 
 
 #LOGIN
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
-
+from django.contrib.auth.models import User
+from django.contrib.auth.password_validation import password_changed
 
 
 
@@ -25,8 +27,20 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def inicio(request):
-    return render(request, "AppCoder/inicio.html")
 
+    #diccionario = {}
+    #cantidadDeAvatares = 0
+    
+    #if request.user.is_authenticated:
+        #avatar = Avatar.objects.filter( user = request.user.id)
+        
+        #for a in avatar:
+            #cantidadDeAvatares = cantidadDeAvatares + 1
+    
+    
+        #diccionario["avatar"] = avatar[cantidadDeAvatares-1].imagen.url 
+    return render(request, "AppCoder/inicio.html") #diccionario)
+    
 def formulario(request,):
     return render(request,"AppCoder/formulario.html")
 
@@ -35,6 +49,12 @@ def sobreNosotrxs(request):
 
 def post1(request):
     return render(request, "AppCoder/post1.html")
+
+def post2(request):
+    return render(request, "AppCoder/post2.html")
+
+def post3(request):
+    return render(request, "AppCoder/post3.html")
 
 def contacto(request):
     return render(request, "AppCoder/contacto.html")
