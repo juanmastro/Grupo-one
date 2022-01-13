@@ -27,6 +27,7 @@
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item"><a class="nav-link" href="{% url 'Inicio' %}">Inicio</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'Sobre nosotrxs' %}">Sobre nosotros</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'Newsletter' %}">Newsletter</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'Contacto' %}">Contacto</a></li>
                           
                             {% if not request.user.is_authenticated %}
@@ -36,6 +37,7 @@
             
                             {% if  request.user.is_authenticated %}
                             <li class="nav-item"><i><a class="nav-link" style="color:rgb(25, 72, 226);" href="{% url 'Logout' %}"><ins>Logout</ins></a></i></li>
+                            <li class="nav-item"><i><a class="nav-link" style="color:rgb(25, 72, 226);" href="{% url 'EditarPerfil' %}"><ins>Editar Perfil</ins></a></i></li>
                             {% endif %}
                     
                             
@@ -57,9 +59,14 @@
 
                                     {% if  request.user.is_authenticated %}
                                     <li class="sidebar-nav-item"><b><a style="color:white; font-size: 160%;">Hola!, Bienvenido {{user.username}} !! </a></b></li>
+                                        <div><li class="nav-item"><a class="btn btn-primary btn-lg px-4 me-sm-3 " href="{% url 'PeliFormulario' %}">Cargar Pelicula</a></li>
+                                        <br><li class="nav-item"><a class="btn btn-primary btn-lg px-4 me-sm-3 " href="{% url 'Busquedapeli' %}">Buscar Pelicula</a></li>
+                                        <br><li class="nav-item"><a class="btn btn-primary btn-lg px-4 me-sm-3 " href="{% url 'Leerpeliculas' %}">Lista Completa</a></li>
+                                        </div>
                                     {% endif %}
-
+                                    
                                 </div>
+                                <br><li class="nav-item"><a class="btn btn-primary btn-lg px-4 me-sm-3 " href="{% url 'ProponerPeli' %}">Proponer Pelicula</a></li>
                             </div>
                         </div>
                         <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://wegotthiscovered.com/wp-content/uploads/gremlins.jpg" alt="..." /></div>
@@ -68,11 +75,11 @@
             </header>        
             <!-- SECCIÓN VARIABLE -->
 
-                {% block contenido %}
+                 {% block contenido %}
 
 
 
-                {% endblock %}
+                 {% endblock %}
 
 
             <!-- Blog preview section-->
@@ -81,74 +88,82 @@
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-8 col-xl-6">
                             <div class="text-center">
-                                <h2 class="fw-bolder">Nuestro blog</h2>
-                                <p class="lead fw-normal text-muted mb-5">El señor de los anillos manda.</p>
+                                <h2 class="fw-bolder">Nuestro Blog</h2>
+                                <p class="lead fw-normal text-muted mb-5">Ultimas Novedades</p>
                             </div>
                         </div>
                     </div>
                     <div class="row gx-5">
                         <div class="col-lg-4 mb-5">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="https://es.web.img3.acsta.net/r_1280_720/newsv7/16/07/29/09/40/5190230.jpg" alt="..." />
+                                <img class="card-img-top" src="https://d35gjdqhyew8r0.cloudfront.net/wp-content/uploads/2021/09/matrix-4.webp" alt="..." />
                                 <div class="card-body p-4">
-                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Noticias</div>
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">¿Cuándo se estrena The Matrix Resurrections?</h5></a>
-                                    <p class="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Sin Spoiler</div>
+                                    <a class="text-decoration-none link-dark stretched-link"><h5 class="card-title mb-3">The Matrix Resurrections</h5></a>
+                                    <p class="card-text mb-0">Thomas Anderson lleva una vida cómoda como una eminencia dentro del mundo de los videojuegos, pero tiene problemas para discernir entre lo que es realidad y lo que no lo es. Thomas deberá decidir si sigue al conejo blanco una vez más.
+                                    <b>Fecha de estreno: 22 de diciembre de 2021 </b>
+                                    
                                 </div>
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
                                         <div class="d-flex align-items-center">
-                                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
+                                            <img class="rounded-circle me-3" src="https://i.ibb.co/DbBhsWP/USUARIO.png" alt="..." />
                                             <div class="small">
-                                                <div class="fw-bold">Ricardo Fort</div>
+                                                <div class="fw-bold">Usuario 1</div>
                                                 <div class="text-muted">Diciembre 10, 2021 &middot; ...</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'Post1' %}">Leer más</a></li>
                         </div>
                         <div class="col-lg-4 mb-5">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="https://galakia.com/wp-supercontent/uploads/2016/11/Star-Wars.-Imagen-by-Insomnia-Cured-Here-1-600x350.jpg?x13578" alt="..." />
+                                <img class="card-img-top" src="https://i.blogs.es/344b4d/el-despertar-de-la-fuerza/1366_2000.jpg" alt="..." />
                                 <div class="card-body p-4">
-                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Análisis</div>
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">¿Por qué la nueva trilogía de Star Wars es TAN mala?</h5></a>
-                                    <p class="card-text mb-0">This text is a bit longer to illustrate the adaptive height of each card. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Alert Spoiler!!</div>
+                                    <a class="text-decoration-none link-dark stretched-link"><h5 class="card-title mb-3">Tercera trilogía de Star Wars</h5></a>
+                                    <p class="card-text mb-0">Lo primero que hay que decir es que la tarea de continuar una historia ya finalizada no era para nada sencilla. La trilogía original es considerada un clásico del cine, hasta el punto en que The Hollywood Reporter la incluyó en el puesto número 11 de las mejores obras cinematográficas de todos los tiempos.</p>
+                                    
+                              
                                 </div>
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
                                         <div class="d-flex align-items-center">
-                                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
+                                            <img class="rounded-circle me-3" src="https://i.ibb.co/w0kXgrx/Female-user-icon-clip-art.jpg" alt="..." />
                                             <div class="small">
-                                                <div class="fw-bold">Jorge Lucas</div>
+                                                <div class="fw-bold">Usuario 2</div>
                                                 <div class="text-muted">Diciembre 14, 2021 &middot; ...</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'Post2' %}">Leer más</a></li>
                         </div>
                         <div class="col-lg-4 mb-5">
+                            
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="https://www.bolsamania.com/cine/wp-content/uploads/2019/04/4.jpg" alt="..." />
+                                <img class="card-img-top" src="https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/203072/203072_1140x516.jpg" alt="..." />
                                 <div class="card-body p-4">
-                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Curiosidades</div>
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Admins recomiendan: El Padrino</h5></a>
-                                    <p class="card-text mb-0">Some more quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Noticias</div>
+                                    <a class="text-decoration-none link-dark stretched-link"><h5 class="card-title mb-3"><b>La Comunidad del Anillo es elegida la mejor película de todos los tiempos en encuesta</b></h5></a>
+                                    <p class="card-text mb-0">La Comunidad del Anillo tiene un lugar muy especial en los corazones de millones de fans.</p>
                                 </div>
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
                                         <div class="d-flex align-items-center">
-                                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
+                                            <img class="rounded-circle me-3" src="https://i.ibb.co/r4F2tjZ/Pngtree-speaker-broadcast-icon-image-1144351.jpg" alt="..." />
                                             <div class="small">
-                                                <div class="fw-bold">Juan Schelotto</div>
+                                                <div class="fw-bold">Usuario 3</div>
                                                 <div class="text-muted">Noviembre 30, 2021 &middot; ...</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'Post3' %}">Leer más</a></li>
                         </div>
                     </div>
                     <!-- Call to action-->

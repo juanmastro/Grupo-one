@@ -1,4 +1,6 @@
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 class UsuarioForm (forms.Form):
 
@@ -23,3 +25,12 @@ class FormNewsletter(forms.Form):
     email = forms.EmailField()
 
 
+
+class UserEditForm(UserCreationForm):
+
+    email = forms.EmailField(label="Ingrese su email:")
+    password1 = forms.CharField(label='Contraseña')
+    password2 = forms.CharField(label='Repetir la contraseña', widget=forms.PasswordInput) 
+   
+  
+ 

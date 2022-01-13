@@ -36,6 +36,12 @@ def sobreNosotrxs(request):
 def post1(request):
     return render(request, "AppCoder/post1.html")
 
+def post2(request):
+    return render(request, "AppCoder/post2.html")
+
+def post3(request):
+    return render(request, "AppCoder/post3.html")
+
 def contacto(request):
     return render(request, "AppCoder/contacto.html")
 
